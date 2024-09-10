@@ -1,0 +1,24 @@
+{
+	"situação_do_banco": [
+		{
+			"id": 1,
+			"tipo_sanguineo": "A+",
+			"quantidade_em_%": 30
+		},
+		{
+			"id": 2,
+			"tipo_sanguineo": "A-",
+			"quantidade_em_%": 30
+		},
+		{
+			"id": 3,
+			"tipo_sanguineo": "B+",
+			"quantidade_em_%": 30
+		},
+		{
+			"id": 4,
+			"tipo_sanguineo": "B-",
+			"quantidade_em_%": 30
+		}
+	]
+}
