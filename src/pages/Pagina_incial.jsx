@@ -4,8 +4,11 @@ import './Pagina_acompanhamento.css';
 function Pagina_inicial() {
 	return (
 		<>
-			<h1>Página inicial</h1>
-			<h2>Teste</h2>
+			<p>jfhskd</p>
+			<p>jfhskd</p>
+			<p>jfhskd</p>
+			<p>jfhskd</p>
+			<p>jfhskd</p>
 			<Btn />
 			<h1></h1>
 		</>
