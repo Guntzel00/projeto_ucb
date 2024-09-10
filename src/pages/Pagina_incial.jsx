@@ -6,7 +6,9 @@ function Pagina_inicial() {
 		<>
 			<h1>Página inicial</h1>
 			<Btn />
+			<h1></h1>
 		</>
+
 	);
 }
 
