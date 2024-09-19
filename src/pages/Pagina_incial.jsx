@@ -1,18 +1,12 @@
-import Btn from '../components/Btn';
-import './Pagina_acompanhamento.css';
+import Footer from '../components/footer/footer';
+import Header_logon from '../components/header/Header_logon';
 
 function Pagina_inicial() {
 	return (
 		<>
-			<p>jfhskd</p>
-			<p>jfhskd</p>
-			<p>jfhskd</p>
-			<p>jfhskd</p>
-			<p>jfhskd</p>
-			<Btn />
-			<h1></h1>
+			<Header_logon />
+			<Footer />
 		</>
-
 	);
 }
 
