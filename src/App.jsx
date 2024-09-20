@@ -1,5 +1,5 @@
-import './pages/Pagina_incial';
-import Pagina_inicial from './pages/Pagina_incial';
+import './pages/pagina_inicial/Pagina_incial';
+import Pagina_inicial from './pages/pagina_inicial/Pagina_incial';
 
 function App() {
 	return (

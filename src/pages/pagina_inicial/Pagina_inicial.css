@@ -1,0 +1,109 @@
+.pag_inicial {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #faf1f1;
+	padding: 3rem 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 70%;
+	height: 100vh;
+	background-color: #fff;
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 30px;
+	padding: 2.5rem;
+}
+
+.divisor {
+	width: 70%;
+	height: 0.1rem;
+	background-color: #000;
+	border-radius: 50%;
+	margin: 3rem 0;
+	filter: blur(1px);
+}
+/* =============================== Bloco boas vindas ================================== */
+
+.container_boas_vindas {
+	display: flex;
+	max-height: 23rem;
+	align-items: center;
+	width: 100%;
+}
+
+.container_boas_vindas h1 {
+	flex: 1;
+	text-align: start;
+	margin-left: 7rem;
+}
+.container_boas_vindas img {
+	max-height: 100%;
+	flex: 1;
+}
+
+.container_boas_vindas h1 span {
+	color: #e95151;
+}
+
+/* =========================== Bloco situação do banco de sangue ========================== */
+.container_nivel_banco_de_sangue {
+	padding: 20px;
+	text-align: start;
+}
+
+.container_nivel_banco_de_sangue h2 {
+	color: #b71c1c;
+	margin-bottom: 2rem;
+}
+
+.porcentagens {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	width: 20rem;
+	margin-bottom: 10px;
+}
+
+.label {
+	width: 40px;
+	text-align: right;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.progress-bar-container {
+	display: flex;
+	width: 15rem;
+	height: 1rem;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+}
+
+.progress-bar-fill {
+	background-color: #e53935;
+	height: 100%;
+	transition: width 0.3s ease-in-out;
+}
+
+.progress-bar-empty {
+	flex: 1;
+	background-color: #fff;
+}
+
+.percentage {
+	margin-left: 10px;
+	font-weight: bold;
+}

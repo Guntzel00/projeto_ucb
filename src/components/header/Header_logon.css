@@ -22,6 +22,6 @@ header ul li a {
 }
 
 .bloco {
-	height: 85vh;
+	flex: 1;
 	background-color: #faf1f1;
 }
