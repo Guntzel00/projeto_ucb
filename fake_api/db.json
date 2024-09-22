@@ -1,24 +1,74 @@
 {
-	"situação_do_banco": [
+	"situacao_do_banco": [
 		{
 			"id": 1,
 			"tipo_sanguineo": "A+",
-			"quantidade_em_%": 30
+			"porcentagem": 50
 		},
 		{
 			"id": 2,
 			"tipo_sanguineo": "A-",
-			"quantidade_em_%": 30
+			"porcentagem": 80
 		},
 		{
 			"id": 3,
 			"tipo_sanguineo": "B+",
-			"quantidade_em_%": 30
+			"porcentagem": 60
 		},
 		{
 			"id": 4,
 			"tipo_sanguineo": "B-",
-			"quantidade_em_%": 30
+			"porcentagem": 35
+		},
+		{
+			"id": 5,
+			"tipo_sanguineo": "AB+",
+			"porcentagem": 20
+		},
+		{
+			"id": 6,
+			"tipo_sanguineo": "AB-",
+			"porcentagem": 40
+		},
+		{
+			"id": 7,
+			"tipo_sanguineo": "O+",
+			"porcentagem": 50
+		},
+		{
+			"id": 8,
+			"tipo_sanguineo": "O-",
+			"porcentagem": 20
+		}
+	],
+	"centros_de_doacao": [
+		{
+			"id": 1,
+			"nome": "Fundação Hemocentro de Brasília",
+			"link_localizacao": "https://maps.app.goo.gl/mewFKhGsWWCap3a79",
+			"endereco": "BL 3 - SMHN conjunto A - Asa Norte, Brasília - DF, 70710-908",
+			"telefone": "06133274413"
+		},
+		{
+			"id": 2,
+			"nome": "Hospital Regional de Taguatinga",
+			"link_localizacao": "https://maps.app.goo.gl/HkNADd2iTSjNRttH7",
+			"endereco": "St. C Norte Área Especial 24 - Taguatinga, Brasília - DF, 72115-902",
+			"telefone": "06120171700"
+		},
+		{
+			"id": 3,
+			"nome": "Hospital de Base do DF",
+			"link_localizacao": "https://maps.app.goo.gl/fkPUr4aWH3iDP7gx7",
+			"endereco": "SNO Q 1 - Pte. Alta Norte (Gama), Brasília - DF",
+			"telefone": "061982777211"
+		},
+		{
+			"id": 4,
+			"nome": "Hospital Regional de Guará",
+			"link_localizacao": "https://maps.app.goo.gl/eJTM7r8mCfySXjRc8",
+			"endereco": "QI O6, Lote C s/n, Área Especial, Brasília - DF, 71010-006",
+			"telefone": "06133274413"
 		}
 	]
 }

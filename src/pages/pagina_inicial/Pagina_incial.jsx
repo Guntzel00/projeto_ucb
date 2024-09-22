@@ -1,21 +1,48 @@
+import { useEffect, useState } from 'react';
 import Footer from '../../components/footer/footer';
 import Header_logon from '../../components/header/Header_logon';
 import './Pagina_inicial.css';
 import ilustraçao from '../../assets/boas_vindas.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import Btn from '../../components/btn/Btn';
+import PropTypes from 'prop-types';
 
 function Pagina_inicial() {
-	const bloodData = {
-		'A+': 60,
-		'B+': 50,
-		'AB+': 60,
-		'O+': 30,
-		'A-': 80,
-		'B-': 50,
-		'AB-': 60,
-		'O-': 40,
-	};
+	const [bloodData, setBloodData] = useState([]);
+	const [centrosData, setCentrosData] = useState([]);
 
-	// eslint-disable-next-line react/prop-types
+	useEffect(() => {
+		fetch('http://localhost:3000/situacao_do_banco')
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Erro na requisição: ' + response.status);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				setBloodData(data); // Armazena os dados no estado
+			})
+			.catch((error) => {
+				console.error('Erro ao buscar os dados:', error); // Trata erros
+			});
+
+		fetch('http://localhost:3000/centros_de_doacao')
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Erro na requisição: ' + response.status);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				setCentrosData(data); // Armazena os dados no estado
+				console.log(data);
+			})
+			.catch((error) => {
+				console.error('Erro ao buscar os dados:', error); // Trata erros
+			});
+	}, []);
+
 	const BarraDeProgesso = ({ label, percentage }) => {
 		return (
 			<div className='row'>
@@ -30,6 +57,31 @@ function Pagina_inicial() {
 				<span className='percentage'>{percentage} %</span>
 			</div>
 		);
+	};
+	BarraDeProgesso.propTypes = {
+		label: PropTypes.string.isRequired, // O label deve ser uma string e é obrigatório
+		percentage: PropTypes.number.isRequired, // A referência deve ser uma string e é obrigatória
+	};
+
+	const CentrosDeDoacao = ({ nome, link_endereco }) => {
+		return (
+			<div className='centro'>
+				<div>
+					<h3>{nome}</h3>
+					<a target='_blank' href={link_endereco}>
+						<p>
+							Ver localização {''}
+							<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+						</p>
+					</a>
+				</div>
+				<Btn label='Doar' referencia='#' />
+			</div>
+		);
+	};
+	CentrosDeDoacao.propTypes = {
+		nome: PropTypes.string.isRequired, // O label deve ser uma string e é obrigatório
+		link_endereco: PropTypes.string.isRequired, // A referência deve ser uma string e é obrigatória
 	};
 
 	return (
@@ -54,14 +106,25 @@ function Pagina_inicial() {
 							</span>
 						</h2>
 						<div className='porcentagens'>
-							{Object.entries(bloodData).map(([label, percentage]) => (
+							{bloodData.map((item) => (
 								<BarraDeProgesso
-									key={label}
-									label={label}
-									percentage={percentage}
+									key={item.id}
+									label={item.tipo_sanguineo}
+									percentage={item.porcentagem}
 								/>
 							))}
 						</div>
+					</div>
+					<div className='divisor'></div>
+					<div className='container_lista_centros_de_doacao'>
+						<h2>Centros de doação próximos a você 🏥</h2>
+						{centrosData.map((centro) => (
+							<CentrosDeDoacao
+								key={centro.id}
+								nome={centro.nome}
+								link_endereco={centro.link_localizacao}
+							/>
+						))}
 					</div>
 				</div>
 			</div>
