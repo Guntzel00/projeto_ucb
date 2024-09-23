@@ -1,34 +1,35 @@
 import './Header_logon.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Importa o Link do React Router
 
 function Header_logon() {
 	return (
 		<>
 			<header>
-				<a href='#'>
+				{/* Substituindo o <a> por <Link> para navegação via React Router */}
+				<Link to='/'>
 					<h1>Seja Doador.org</h1>
-				</a>
+				</Link>
 				<nav>
 					<ul>
 						<li>
-							<a href='#'>Home</a>
+							<Link to='/'>Home</Link>
 						</li>
 						<li>
-							<a href='#'>Sobre</a>
+							<Link to='/sobre'>Sobre</Link>
 						</li>
 						<li>
-							<a href='#'>Contato</a>
+							<Link to='/conteudos'>Conteúdos</Link>
 						</li>
 						<li>
-							<a href='#'>
+							<Link to='/logout'>
 								<FontAwesomeIcon icon={faPowerOff} />
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>
 			</header>
-			<div className='bloco'></div>
 		</>
 	);
 }

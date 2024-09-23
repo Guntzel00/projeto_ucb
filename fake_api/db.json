@@ -70,5 +70,47 @@
 			"endereco": "QI O6, Lote C s/n, Área Especial, Brasília - DF, 71010-006",
 			"telefone": "06133274413"
 		}
+	],
+	"artigos": [
+		{
+			"id": 1,
+			"titulo": "O que é doação de sangue?",
+			"conteudo": "A doação de sangue é um gesto solidário de doar uma pequena quantidade do próprio sangue para salvar a vida de pessoas que necessitam de transfusão sanguínea. Não existe nada que substitua o sangue, ele só pode ser obtido por meio da doação de outra pessoa. O sangue doado é vital para os atendimentos de urgência, realização de cirurgias de grande porte e tratamento de pessoas com doenças crônicas, como falciforme e talassemia, além de doenças oncológicas variadas que necessitam de transfusão de sangue.",
+			"resumo": "A doação de sangue é um gesto solidário de doar uma pequena quantidade do próprio sangue para salvar a vida de pessoas que necessitam de transfusão sanguínea.",
+			"url_imagem": "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"desc_imagem": "Imagem de uma pessoa doando sangue."
+		},
+		{
+			"id": 2,
+			"titulo": "Quem pode doar sangue?",
+			"conteudo": "Para doar sangue, é necessário atender a alguns requisitos básicos, como ter entre 16 e 69 anos, pesar no mínimo 50 kg e estar em boas condições de saúde. Além disso, é preciso apresentar um documento com foto no momento da doação. Existem algumas restrições temporárias ou permanentes para quem deseja doar, como ter passado por uma cirurgia recentemente ou ter certas condições de saúde. É importante consultar os requisitos no centro de doação mais próximo.",
+			"resumo": "Requisitos básicos para doar sangue incluem estar saudável, ter entre 16 e 69 anos e pesar pelo menos 50 kg.",
+			"url_imagem": "https://plus.unsplash.com/premium_photo-1682309704250-6bac0f499665?q=80&w=2112&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"desc_imagem": "Imagem de um centro de doação de sangue."
+		},
+		{
+			"id": 3,
+			"titulo": "Benefícios da doação de sangue",
+			"conteudo": "Além de salvar vidas, a doação de sangue traz benefícios à saúde do próprio doador. Ao doar sangue, o corpo é estimulado a renovar as células sanguíneas, o que pode melhorar a circulação e a oxigenação dos tecidos. A doação também permite um check-up gratuito, pois os doadores passam por exames rápidos de saúde, onde podem ser detectadas possíveis condições médicas, como anemia ou infecções.",
+			"resumo": "A doação de sangue ajuda a renovar as células sanguíneas e proporciona um check-up gratuito ao doador.",
+			"url_imagem": "https://plus.unsplash.com/premium_photo-1682090362426-843159e3bb9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"desc_imagem": "Imagem de uma equipe médica realizando exames."
+		},
+		{
+			"id": 4,
+			"titulo": "Cuidados após a doação de sangue",
+			"conteudo": "Após a doação de sangue, é importante tomar alguns cuidados para garantir que o corpo se recupere rapidamente. Recomenda-se evitar atividades físicas intensas nas primeiras 24 horas e ingerir bastante líquido para ajudar na reposição do volume sanguíneo. É comum sentir uma leve fraqueza ou tontura logo após a doação, mas isso passa rapidamente. O doador também deve se alimentar bem e evitar o consumo de bebidas alcoólicas nas primeiras horas.",
+			"resumo": "Após a doação, evite atividades físicas intensas e mantenha-se hidratado para ajudar na recuperação do corpo.",
+			"url_imagem": "https://plus.unsplash.com/premium_photo-1670426502021-a1d1b7b1aaed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+			"desc_imagem": "Imagem de uma pessoa se hidratando após a doação de sangue."
+		},
+		{
+			"id": 5,
+			"titulo": "Mitos sobre a doação de sangue",
+			"conteudo": "Há muitos mitos sobre a doação de sangue que precisam ser desfeitos. Um dos mitos mais comuns é que doar sangue pode causar fraqueza permanente, o que não é verdade. O corpo rapidamente repõe o volume de sangue doado. Outro mito é que doadores podem contrair doenças durante a doação, mas os procedimentos seguem rigorosos padrões de segurança, com materiais descartáveis. É importante buscar informações em fontes confiáveis para desmistificar essas crenças.",
+			"resumo": "Desfazendo mitos sobre a doação de sangue, como a ideia errada de que doar causa fraqueza ou pode transmitir doenças.",
+			"url_imagem": "https://images.unsplash.com/photo-1593642532744-d377ab507dc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU2OXwwfDF8c2VhcmNofDF8fGhlYWx0aHxlbnwwfHx8fDE2MzI3NDgwODc&ixlib=rb-1.2.1&q=80&w=400",
+			"desc_imagem": "Imagem ilustrativa desmistificando a doação de sangue."
+		}
 	]
 }

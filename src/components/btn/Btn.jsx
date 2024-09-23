@@ -1,12 +1,13 @@
 import './Btn.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Btn({ label, referencia }) {
 	return (
 		<>
-			<a className='btn' href={referencia}>
+			<Link className='btn' to={referencia}>
 				{label}
-			</a>
+			</Link>
 		</>
 	);
 }
