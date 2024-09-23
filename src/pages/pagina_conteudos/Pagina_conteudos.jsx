@@ -48,7 +48,7 @@ function Pagina_conteudos() {
 		resumo: PropTypes.string.isRequired,
 		link_img: PropTypes.string.isRequired,
 		desc_img: PropTypes.string.isRequired,
-		id: PropTypes.string.isRequired,
+		id: PropTypes.number.isRequired,
 	};
 
 	return (
