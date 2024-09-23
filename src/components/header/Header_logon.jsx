@@ -14,7 +14,7 @@ function Header_logon() {
 				<nav>
 					<ul>
 						<li>
-							<Link to='/login'>Home</Link>
+							<Link to='/home'>Home</Link>
 						</li>
 						<li>
 							<Link to='/sobre'>Sobre</Link>

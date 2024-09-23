@@ -6,9 +6,9 @@ import Pagina_login from '../pages/pagina_login/Pagina_login';
 function AppRoutes() {
 	return (
 		<Routes>
-			<Route path='/' element={<Pagina_inicial />} />
+			<Route path='/' element={<Pagina_login />} />
+			<Route path='/home' element={<Pagina_inicial />} />
 			<Route path='/conteudos' element={<Pagina_conteudos />} />
-			<Route path='/login' element={<Pagina_login />} />
 		</Routes>
 	);
 }
