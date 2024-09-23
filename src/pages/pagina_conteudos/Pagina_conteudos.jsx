@@ -29,14 +29,14 @@ function Pagina_conteudos() {
 			});
 	}, []);
 
-	const Bloco_de_depoimento = ({ titulo, resumo, link_img, desc_img }) => {
+	const Bloco_de_depoimento = ({ titulo, resumo, link_img, desc_img, id }) => {
 		return (
 			<div className='bloco_depoimento'>
 				<img src={link_img} alt={desc_img} />
 				<div className='texto'>
 					<h3>{titulo}</h3>
 					<p>{resumo}</p>
-					<Link to='/conteudos'>
+					<Link to={`/conteudos/${id}`}>
 						Ler mais <FontAwesomeIcon icon={faArrowRight} />
 					</Link>
 				</div>
@@ -48,6 +48,7 @@ function Pagina_conteudos() {
 		resumo: PropTypes.string.isRequired,
 		link_img: PropTypes.string.isRequired,
 		desc_img: PropTypes.string.isRequired,
+		id: PropTypes.string.isRequired,
 	};
 
 	return (
@@ -63,6 +64,7 @@ function Pagina_conteudos() {
 							titulo={artigo.titulo}
 							link_img={artigo.url_imagem}
 							desc_img={artigo.desc_imagem}
+							id={artigo.id}
 						/>
 					))}
 				</div>
