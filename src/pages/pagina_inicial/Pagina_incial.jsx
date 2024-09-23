@@ -52,6 +52,7 @@ function Pagina_inicial() {
 						className='progress-bar-fill'
 						style={{ width: `${percentage}%` }}
 					></div>
+					
 					<div className='progress-bar-empty'></div>
 				</div>
 				<span className='percentage'>{percentage} %</span>

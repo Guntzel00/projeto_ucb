@@ -1,0 +1,144 @@
+.pag_inicial {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #faf1f1;
+	padding: 3rem 0;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 70%;
+	background-color: #fff;
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 30px;
+	padding: 2.5rem 5rem;
+
+	h2 {
+		color: #b71c1c;
+		margin-bottom: 2rem;
+	}
+}
+
+.divisor {
+	width: 70%;
+	height: 0.1rem;
+	background-color: #000;
+	border-radius: 50%;
+	filter: blur(1px);
+	margin: 4rem 0;
+}
+/* =============================== Bloco boas vindas ================================== */
+
+.container_boas_vindas {
+	display: flex;
+	max-height: 23rem;
+	align-items: center;
+	width: 100%;
+}
+
+.container_boas_vindas h1 {
+	flex: 1;
+	text-align: start;
+	margin-left: 7rem;
+}
+.container_boas_vindas img {
+	max-height: 100%;
+	flex: 1;
+}
+
+.container_boas_vindas h1 span {
+	color: #e95151;
+}
+
+/* =========================== Bloco situação do banco de sangue ========================== */
+.container_nivel_banco_de_sangue {
+	padding: 0 2rem;
+	text-align: start;
+	width: 100%;
+}
+
+.porcentagens {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1.5rem;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	width: 40%;
+	margin-bottom: 1rem;
+}
+
+.label {
+	width: 10%;
+	text-align: start;
+	margin-right: 1rem;
+	font-weight: bold;
+}
+
+.progress-bar-container {
+	display: flex;
+	width: 80%;
+	height: 1rem;
+	background-color: #000;
+	padding: 0.2rem;
+	border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+	margin-right: 0.5rem;
+}
+
+.progress-bar-fill {
+	background-color: #e53935;
+	height: 100%;
+	transition: width 0.3s ease-in-out;
+}
+
+.progress-bar-empty {
+	flex: 1;
+	background-color: #fff;
+}
+
+.percentage {
+	width: 15%;
+
+	font-weight: bold;
+}
+
+/* =========================== Bloco de centros de doação ================================== */
+
+.container_lista_centros_de_doacao {
+	padding: 0 2rem;
+	text-align: start;
+	width: 100%;
+}
+
+.centro {
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+	background-color: #faf1f1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	min-height: 7rem;
+	padding: 2rem;
+	border-radius: 1rem;
+	margin: 1.5rem 0;
+	div {
+		display: flex;
+		flex-direction: column;
+		h3 {
+			margin-bottom: 1rem;
+		}
+		p {
+			font-weight: bold;
+			color: #b71c1c;
+		}
+	}
+}
