@@ -1,0 +1,27 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.2rem 4rem;
+	width: 100%;
+	background-color: #ac2727;
+	color: #ffffff;
+}
+
+header ul {
+	display: flex;
+}
+header ul li {
+	padding: 0 1rem;
+}
+
+header ul li a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.bloco {
+	flex: 1;
+	background-color: #faf1f1;
+}
