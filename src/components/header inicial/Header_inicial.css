@@ -1,27 +1,29 @@
 header {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.2rem 4rem;
+	padding: 0.5rem 4rem;
 	width: 100%;
-	background-color: #ac2727;
-	color: #ffffff;
+	background-color: #faf1f1;
+	color: #ac2727;
 }
 
-header ul {
+.texto {
 	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
-header ul li {
-	padding: 0 1rem;
-}
-
-header ul li a {
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 700;
-}
-
 .bloco {
 	flex: 1;
 	background-color: #faf1f1;
+}
+
+.linha {
+	width: 70%;
+	height: 0.1rem;
+	background-color: #ac2727;
+	border-radius: 50%;
+	filter: blur(1px);
+	margin-top: 1rem;
 }
