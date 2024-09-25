@@ -1,0 +1,9 @@
+.pag_recuperacao {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #faf1f1;
+	padding: 3rem 0;
+}
+

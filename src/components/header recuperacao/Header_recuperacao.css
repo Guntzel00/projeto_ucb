@@ -1,0 +1,33 @@
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 4rem;
+	width: 100%;
+	background-color: #faf1f1;
+	color: #ac2727;
+    border-bottom: 1px solid #ccc;
+}
+
+.texto {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+    h1{
+        text-size-adjust: 25px;
+    }
+}
+.bloco {
+	flex: 1;
+	background-color: #faf1f1;
+}
+
+.linha {
+	width: 100%;
+	height: 0.1rem;
+	background-color: #e88585;
+	border-radius: 0%;
+	filter: blur(1px);
+	margin-top: 1rem;
+}

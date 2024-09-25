@@ -1,16 +1,18 @@
 import Footer from '../../components/footer/footer';
 import './Pagina_recuperacao_senha.css';
+import Header_inicial from '../../components/header recuperacao/Header_recuperacao';
 
 function Pagina_recuperacao_senha() {
 	// Pode codar javascript aqui
 
-	let exemplo = 'Exemplo de variável';
+	let exemplo = 'Esqueceu sua senha?';
+	
 
 	return (
 		<>
-			<header_inicial></header_inicial>
+			<Header_inicial/>
 			<div>
-				<h1>{exemplo}</h1>
+				<h2>{exemplo}</h2>
 			</div>
 
 			<Footer />
