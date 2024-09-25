@@ -30,6 +30,9 @@ function Pagina_login() {
 								required
 							></input>
 							<p>
+								<Link to="/senha">Esqueceu sua senha?</Link>
+							</p>
+							<p>
 								Não possui cadastro? Clique <Link to='/cadastro'>aqui</Link>
 							</p>
 							<Btn label='Entrar' referencia='/home' />

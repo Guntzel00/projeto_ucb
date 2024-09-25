@@ -90,4 +90,6 @@
 	position: absolute;
 	bottom: -65rem;
 	right: 0;
+	object-fit: cover;
+	height: auto;
 }
