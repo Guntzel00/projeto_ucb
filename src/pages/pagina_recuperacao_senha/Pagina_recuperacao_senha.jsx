@@ -22,11 +22,11 @@ function Pagina_recuperacao_senha() {
 							<h2>Insira seu e-mail e responda a pergunta de segurança</h2>
 							<label htmlFor='email'>Digite seu e-mail cadastrado</label>
 							<input type='email' id='email' name='email' required></input>
-							<label htmlFor='password'>Qual os últimos 4 dígitos do seu cpf?</label>
+							<label htmlFor='text'>Qual os últimos 4 dígitos do seu CPF?</label>
 							<input
-								type='password'
-								id='password'
-								name='password'
+								type='text'
+								id='cpf'
+								name='cpf'
 								required
 							></input>
 							<div className='btn-recuperar'>

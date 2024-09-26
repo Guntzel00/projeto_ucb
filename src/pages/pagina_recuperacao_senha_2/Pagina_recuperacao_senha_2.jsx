@@ -20,9 +20,9 @@ function Pagina_recuperacao_senha_2() {
 					<div className='form-container'>
 						<div className='container-senha'>
 							<h2>Insira sua nova senha</h2>
-							<label htmlFor='email'>Digite sua nova senha</label>
-							<input type='email' id='email' name='email' required></input>
-							<label htmlFor='password'>Confire sua nova senha</label>
+							<label htmlFor='password'>Digite sua nova senha</label>
+							<input type='password' id='password' name='password' required></input>
+							<label htmlFor='password'>Confira sua nova senha</label>
 							<input
 								type='password'
 								id='password'
