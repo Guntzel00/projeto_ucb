@@ -7,7 +7,6 @@ header {
 	width: 100%;
 	background-color: #faf1f1;
 	color: #ac2727;
-    border-bottom: 1px solid #ccc;
 }
 
 .texto {
@@ -31,3 +30,5 @@ header {
 	filter: blur(1px);
 	margin-top: 1rem;
 }
+
+

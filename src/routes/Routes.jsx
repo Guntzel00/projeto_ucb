@@ -4,6 +4,7 @@ import Pagina_conteudos from '../pages/pagina_conteudos/Pagina_conteudos'; // PÃ
 import Pagina_login from '../pages/pagina_login/Pagina_login';
 import Pagina_artigo from '../pages/pagina_artigo/Pagina_artigo';
 import Pagina_recuperacao_senha from '../pages/pagina_recuperacao_senha/Pagina_recuperacao_senha';
+import Pagina_recuperacao_senha_2 from '../pages/pagina_recuperacao_senha_2/Pagina_recuperacao_senha_2';
 
 function AppRoutes() {
 	return (
@@ -13,6 +14,7 @@ function AppRoutes() {
 			<Route path='/conteudos' element={<Pagina_conteudos />} />
 			<Route path='/conteudos/:id' element={<Pagina_artigo />} />
 			<Route path='/recuperacao' element={<Pagina_recuperacao_senha />} />
+			<Route path='/recuperacao2' element={<Pagina_recuperacao_senha_2 />} />
 		</Routes>
 	);
 }

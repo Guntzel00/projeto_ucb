@@ -1,15 +1,15 @@
 import Footer from '../../components/footer/footer';
-import './Pagina_recuperacao_senha.css';
+import './Pagina_recuperacao_senha_2.css';
 import Header_inicial from '../../components/header recuperacao/Header_recuperacao';
 import foto1 from '../../assets/esqueceu.svg';
 import Btn from '../../components/btn/Btn';
 
-function Pagina_recuperacao_senha() {
+function Pagina_recuperacao_senha_2() {
 	return (
 		<>
 			<Header_inicial />
 
-			<div className='pag_recuperacao'>
+			<div className='pag_recuperacao_2'>
 				<div className='titulo'>
 				<h1>Esqueceu sua senha?</h1>
 				</div>
@@ -19,10 +19,10 @@ function Pagina_recuperacao_senha() {
 					</div>
 					<div className='form-container'>
 						<div className='container-senha'>
-							<h2>Insira seu e-mail e responda a pergunta de segurança</h2>
-							<label htmlFor='email'>Digite seu e-mail cadastrado</label>
+							<h2>Insira sua nova senha</h2>
+							<label htmlFor='email'>Digite sua nova senha</label>
 							<input type='email' id='email' name='email' required></input>
-							<label htmlFor='password'>Qual os últimos 4 dígitos do seu cpf?</label>
+							<label htmlFor='password'>Confire sua nova senha</label>
 							<input
 								type='password'
 								id='password'
@@ -30,7 +30,7 @@ function Pagina_recuperacao_senha() {
 								required
 							></input>
 							<div className='btn-recuperar'>
-					            <Btn label='Recuperar senha' referencia='/recuperacao2' />
+					            <Btn label='Atualizar senha' referencia='/home' />
 				            </div>
 						</div>
 					</div>
@@ -41,4 +41,4 @@ function Pagina_recuperacao_senha() {
 		</>
 	);
 }
-export default Pagina_recuperacao_senha;
+export default Pagina_recuperacao_senha_2;

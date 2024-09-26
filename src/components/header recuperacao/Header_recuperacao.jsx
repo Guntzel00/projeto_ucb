@@ -11,7 +11,7 @@ function Header_recuperacao() {
 					<Link to='/'>
 						<h1>Seja Doador.org</h1>
 					</Link>
-					<Btn label='Voltar' referencia='/cadastro' />
+					<Btn label='← Voltar' referencia='/' />
 				</div>
 				<div className='linha'></div>
 			</header>
