@@ -95,31 +95,6 @@ function Pagina_cadastro() {
             </div>
     
             <div className="form-group">
-              <select
-                name="tipoSanguineo"
-                value={formData.tipoSanguineo}
-                onChange={handleChange}
-              >
-                <option value="">Tipo sanguíneo</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-              </select>
-              <input
-                type="text"
-                name="telefone"
-                placeholder="Telefone"
-                value={formData.telefone}
-                onChange={handleChange}
-              />
-            </div>
-    
-            <div className="form-group">
               <input
                 type="date"
                 name="dataNascimento"
@@ -144,11 +119,11 @@ function Pagina_cadastro() {
                 value={formData.cep}
                 onChange={handleChange}
               />
-              <input
+             <input
                 type="text"
-                name="endereco2"
-                placeholder="Complemento"
-                value={formData.endereco2}
+                name="telefone"
+                placeholder="Telefone"
+                value={formData.telefone}
                 onChange={handleChange}
               />
             </div>
