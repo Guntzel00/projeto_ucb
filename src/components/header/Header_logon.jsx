@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'; // Importa o Link do React Router
 function Header_logon() {
 	return (
 		<>
-			<header>
+			<header className='headerLogOn'>
 				{/* Substituindo o <a> por <Link> para navegação via React Router */}
 				<Link to='/'>
 					<h1>Seja Doador.org</h1>

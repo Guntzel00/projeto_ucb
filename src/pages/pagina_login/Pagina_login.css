@@ -15,7 +15,7 @@
 	overflow: hidden;
 }
 
-.foto1 {
+.foto-login {
 	width: 50%;
 }
 
@@ -25,6 +25,19 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	.chamada {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: #b71c1c;
+		margin-top: 2rem;
+		svg {
+			margin-top: 0.5rem;
+			font-size: 2rem;
+		}
+	}
 }
 
 .container-login {
@@ -57,39 +70,53 @@
 	}
 }
 .bloco-depoimentos {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	display: flex;
 	padding: 2rem;
+	img {
+		height: 40rem;
+	}
 	h1 {
 		color: #b71c1c;
 	}
 	span {
 		color: #e95151;
 	}
-}
-
-.overlay {
-	position: absolute;
-	left: 3rem;
-	bottom: -22rem;
+	.overlay {
+		margin-left: 1.5rem;
+	}
 }
 
 .ultimo-bloco {
 	display: flex;
 	width: 100%;
-	justify-content: start;
-	padding: 4rem 2rem;
+	justify-content: center;
+	align-items: center;
+	padding: 0 2rem;
 	h1 {
 		color: #b71c1c;
 		span {
 			color: #000;
 		}
 	}
+	.ultima-frase {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+	}
 }
 .medicos {
-	position: absolute;
-	bottom: -65rem;
-	right: 0;
-	object-fit: cover;
-	height: auto;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		height: 25rem;
+	}
 }

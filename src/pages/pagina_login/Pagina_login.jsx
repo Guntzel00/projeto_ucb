@@ -6,6 +6,8 @@ import './Pagina_login.css';
 import { Link } from 'react-router-dom';
 import Btn from '../../components/btn/Btn';
 import Header_inicial from '../../components/header inicial/Header_inicial';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 function Pagina_login() {
 	return (
@@ -14,7 +16,7 @@ function Pagina_login() {
 
 			<div className='pag_login'>
 				<div className='bloco-1'>
-					<div className='foto1'>
+					<div className='foto-login'>
 						<img src={foto1} alt='mensagem' width='853' height='822' />
 					</div>
 					<div className='form-container'>
@@ -30,18 +32,24 @@ function Pagina_login() {
 								required
 							></input>
 							<p>
-								<Link to="/senha">Esqueceu sua senha?</Link>
+								<Link to='/senha'>Esqueceu sua senha?</Link>
 							</p>
 							<p>
 								Não possui cadastro? Clique <Link to='/cadastro'>aqui</Link>
 							</p>
 							<Btn label='Entrar' referencia='/home' />
 						</div>
+						<div className='chamada'>
+							<h2>Veja como você pode fazer a diferença.</h2>
+							<FontAwesomeIcon icon={faArrowDown} />
+						</div>
 					</div>
 				</div>
 
 				<div className='bloco-depoimentos'>
-					<img src={foto3} alt='mensagem' width='1169' height='935' />
+					<div>
+						<img src={foto3} alt='mensagem' />
+					</div>
 
 					<div className='overlay'>
 						<h1>
@@ -63,7 +71,7 @@ function Pagina_login() {
 						</h1>
 					</div>
 					<div className='medicos'>
-						<img src={foto2} alt='mensagem' width='693' height='597' />
+						<img src={foto2} alt='mensagem' />
 					</div>
 				</div>
 			</div>
