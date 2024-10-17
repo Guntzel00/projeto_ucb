@@ -1,47 +1,54 @@
 import Footer from '../../components/footer/footer';
-import './Pagina_cadastro.css';
-import Header_inicial from '../../components/header recuperacao/Header_recuperacao';
-import foto1 from '../../assets/esqueceu.svg';
+import './Pagina_perfil.css';
+import Header_logon from '../../components/header/Header_logon';
+import foto1 from '../../assets/image4.svg'; // Importando a imagem
 import Btn from '../../components/btn/Btn';
 import React, { useState } from 'react';
 
-function Pagina_cadastro() {
-	const [formData, setFormData] = useState({
-        email: '',
-        rg: '',
-        peso: '',
-        dataNascimento: '',
-        cep: '',
-        senha: '',
-        confirmaSenha: '',
-        cpf: '',
-        telefone: '',
-        endereco: '',
-        doencaTransmissivel: '',
-        sexo: '',
-      });
-    
-      const handleChange = (e) => {
-        setFormData({
-          ...formData,
-          [e.target.name]: e.target.value,
-        });
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        // Lógica de envio do formulário
-        console.log(formData);
-      };
-    
-      return (
-        <>
-        <Header_inicial />
+function Pagina_perfil() {
+  const [formData, setFormData] = useState({
+    email: '',
+    rg: '',
+    peso: '',
+    dataNascimento: '',
+    cep: '',
+    senha: '',
+    confirmaSenha: '',
+    cpf: '',
+    telefone: '',
+    endereco: '',
+    doencaTransmissivel: '',
+    sexo: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Lógica de envio do formulário
+    console.log(formData);
+  };
+
+  return (
+    <>
+      <Header_logon />
+      <div className='perfil_container'>
         <div className="cadastro-container">
-    
+          {/* Adicionando a imagem no canto superior esquerdo */}
+          <img src={foto1} alt="Imagem ilustrativa" className="cadastro-imagem" />
+
+          {/* Botão "Cadastrar" logo abaixo da imagem */}
+          <div className='btn-cadastrar'>
+            <Btn label='Atualizar Perfil' referencia='/home' />
+          </div>
+
           <form className="cadastro-form" onSubmit={handleSubmit}>
-            <h2 className="cadastro-title">Cadastro de doador</h2>
-    
+
             <div className="form-group">
               <input
                 type="email"
@@ -58,7 +65,7 @@ function Pagina_cadastro() {
                 onChange={handleChange}
               />
             </div>
-    
+
             <div className="form-group">
               <input
                 type="text"
@@ -75,7 +82,7 @@ function Pagina_cadastro() {
                 onChange={handleChange}
               />
             </div>
-    
+
             <div className="form-group">
               <input
                 type="text"
@@ -92,7 +99,7 @@ function Pagina_cadastro() {
                 onChange={handleChange}
               />
             </div>
-    
+
             <div className="form-group">
               <input
                 type="date"
@@ -109,7 +116,7 @@ function Pagina_cadastro() {
                 onChange={handleChange}
               />
             </div>
-    
+
             <div className="form-group">
               <input
                 type="text"
@@ -118,7 +125,7 @@ function Pagina_cadastro() {
                 value={formData.cep}
                 onChange={handleChange}
               />
-             <input
+              <input
                 type="text"
                 name="telefone"
                 placeholder="Telefone"
@@ -126,68 +133,62 @@ function Pagina_cadastro() {
                 onChange={handleChange}
               />
             </div>
-    
+
             <div className="form-group radio-columns">
-  
-            <div className="radio-group">
+              <div className="radio-group">
                 <label>É portador de doença transmissível?</label>
                 <label>
-                    <input
+                  <input
                     type="radio"
                     name="doencaTransmissivel"
                     value="Sim"
                     checked={formData.doencaTransmissivel === 'Sim'}
                     onChange={handleChange}
-                    />
-                Sim
-            </label>
-            <label>
-                <input
+                  />
+                  Sim
+                </label>
+                <label>
+                  <input
                     type="radio"
                     name="doencaTransmissivel"
                     value="Não"
                     checked={formData.doencaTransmissivel === 'Não'}
                     onChange={handleChange}
-                />
-            Não
-            </label>
-        </div>
+                  />
+                  Não
+                </label>
+              </div>
 
-        <div className="sex-group">
-            <label>Sexo:</label>
-            <label>
-                <input
+              <div className="sex-group">
+                <label>Sexo:</label>
+                <label>
+                  <input
                     type="radio"
                     name="sexo"
                     value="Masculino"
                     checked={formData.sexo === 'Masculino'}
                     onChange={handleChange}
-                />
-            Masculino
-            </label>
-            <label>
-                <input
+                  />
+                  Masculino
+                </label>
+                <label>
+                  <input
                     type="radio"
                     name="sexo"
                     value="Feminino"
                     checked={formData.sexo === 'Feminino'}
                     onChange={handleChange}
-                />
-            Feminino
-            </label>
-        </div>
-</div>
-
-
-            <div className='btn-cadastrar'>
-				<Btn label='Cadastrar' referencia='/home' />
-			</div>
+                  />
+                  Feminino
+                </label>
+              </div>
+            </div>
           </form>
         </div>
-        <Footer />
-        </>
-      );
+      </div>
+      <Footer />
+    </>
+  );
 }
-    
 
-export default Pagina_cadastro;
+export default Pagina_perfil;
