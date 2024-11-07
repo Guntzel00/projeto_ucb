@@ -14,7 +14,7 @@ function Pagina_artigo() {
 
 	useEffect(() => {
 		// Faz a requisição para buscar o artigo com base no ID
-		fetch(`http://localhost:3000/artigos/${id}`)
+		fetch(`http://localhost:5000/api/artigos/${id}`)
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error('Erro na requisição: ' + response.status);

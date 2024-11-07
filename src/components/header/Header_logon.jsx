@@ -17,7 +17,7 @@ function Header_logon() {
 							<Link to='/home'>Home</Link>
 						</li>
 						<li>
-							<Link to='/sobre'>Sobre</Link>
+							<Link to='/perfil'>Perfil</Link>
 						</li>
 						<li>
 							<Link to='/conteudos'>Conteúdos</Link>

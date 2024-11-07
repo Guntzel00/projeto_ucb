@@ -13,7 +13,7 @@ function Pagina_inicial() {
 	const [centrosData, setCentrosData] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:3000/situacao_do_banco')
+		fetch('http://localhost:5000/api/banco-sangue/situacao')
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error('Erro na requisição: ' + response.status);
@@ -27,7 +27,7 @@ function Pagina_inicial() {
 				console.error('Erro ao buscar os dados:', error); // Trata erros
 			});
 
-		fetch('http://localhost:3000/centros_de_doacao')
+		fetch('http://localhost:5000/api/centros-doacao/')
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error('Erro na requisição: ' + response.status);
@@ -52,7 +52,7 @@ function Pagina_inicial() {
 						className='progress-bar-fill'
 						style={{ width: `${percentage}%` }}
 					></div>
-					
+
 					<div className='progress-bar-empty'></div>
 				</div>
 				<span className='percentage'>{percentage} %</span>
@@ -121,7 +121,7 @@ function Pagina_inicial() {
 						<h2>Centros de doação próximos a você 🏥</h2>
 						{centrosData.map((centro) => (
 							<CentrosDeDoacao
-								key={centro.id}
+								key={centro._id}
 								nome={centro.nome}
 								link_endereco={centro.link_localizacao}
 							/>

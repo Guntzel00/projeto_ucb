@@ -13,8 +13,9 @@ import Header_logon from '../../components/header/Header_logon';
 
 function Pagina_conteudos() {
 	const [artigosData, setArtigosData] = useState([]);
+
 	useEffect(() => {
-		fetch('http://localhost:3000/artigos')
+		fetch('http://localhost:5000/api/artigos')
 			.then((response) => {
 				if (!response.ok) {
 					throw new Error('Erro na requisição: ' + response.status);
@@ -43,12 +44,13 @@ function Pagina_conteudos() {
 			</div>
 		);
 	};
+
 	Bloco_de_depoimento.propTypes = {
 		titulo: PropTypes.string.isRequired,
 		resumo: PropTypes.string.isRequired,
 		link_img: PropTypes.string.isRequired,
 		desc_img: PropTypes.string.isRequired,
-		id: PropTypes.number.isRequired,
+		id: PropTypes.string.isRequired,
 	};
 
 	return (
@@ -57,16 +59,20 @@ function Pagina_conteudos() {
 			<div className='pag_conteudos'>
 				<div className='container'>
 					<h1>Depoimentos e informações </h1>
-					{artigosData.map((artigo) => (
-						<Bloco_de_depoimento
-							key={artigo.id}
-							resumo={artigo.resumo}
-							titulo={artigo.titulo}
-							link_img={artigo.url_imagem}
-							desc_img={artigo.desc_imagem}
-							id={artigo.id}
-						/>
-					))}
+					{artigosData.length === 0 ? (
+						<p>Nenhum artigo disponível no momento.</p>
+					) : (
+						artigosData.map((artigo) => (
+							<Bloco_de_depoimento
+								key={artigo._id} // Agora usando `_id` como `key`
+								resumo={artigo.resumo}
+								titulo={artigo.titulo}
+								link_img={artigo.url_imagem}
+								desc_img={artigo.desc_imagem}
+								id={artigo._id} // Usando `_id` como `id` para a prop
+							/>
+						))
+					)}
 				</div>
 			</div>
 			<Footer />
