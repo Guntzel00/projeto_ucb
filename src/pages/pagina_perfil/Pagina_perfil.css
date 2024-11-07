@@ -1,14 +1,13 @@
-.cadastro-container {
-	position: relative; /* Para posicionamento absoluto da imagem */
+.bloco-container {
+	position: relative; 
 	background-color: white;
-	padding: 20px;
+	padding: 0px;
 	border-radius: 10px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	width: 1100px;
-	margin: auto;
 }
 
-.cadastro-imagem {
+.perfil-imagem {
 	position: absolute;
 	top: 70px;
 	left: 115px;
@@ -23,7 +22,7 @@
 	font-size: 24px;
 	color: #b33939;
 	margin-bottom: 20px;
-	margin-top: 60px; /* Para dar espaço para a imagem circular no topo */
+	margin-top: 60px; 
 }
 
 .perfil_container {
@@ -36,14 +35,16 @@
 	min-height: 100vh;
 }
 
-.cadastro-form {
+.perfil-form {
 	background-color: #faf1f1;
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	width: 900px;
-	margin-top: 380px; /* Mantém o formulário abaixo da imagem */
+	margin-top: 380px; 
 	margin-bottom: 2rem;
+	margin-left: 100px;
+	position: static;
 }
 
 .form-group {
@@ -90,11 +91,10 @@ label {
 	font-weight: 300;
 }
 
-/* Estilo do botão para mantê-lo logo abaixo da imagem */
-.btn-cadastrar {
+.btn-perfil {
 	position: absolute;
-	top: 280px; /* Logo abaixo da imagem */
-	left: -595px;
+	top: 280px; 
+	left: 125px;
 	display: flex;
 	justify-content: center;
 }

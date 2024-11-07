@@ -38,19 +38,18 @@ function Pagina_perfil() {
 		<>
 			<Header_logon />
 			<div className='perfil_container'>
-				<div className='cadastro-container'>
+				<div className='bloco-container'>
 					<img
 						src={foto1}
 						alt='Imagem ilustrativa'
-						className='cadastro-imagem'
+						className='perfil-imagem'
 					/>
 
-					{/* Botão "Cadastrar" logo abaixo da imagem */}
-					<div className='btn-cadastrar'>
+					<div className='btn-perfil'>
 						<Btn label='Atualizar Perfil' referencia='/home' />
 					</div>
 
-					<form className='cadastro-form' onSubmit={handleSubmit}>
+					<form className='perfil-form' onSubmit={handleSubmit}>
 						<div className='form-group'>
 							<input
 								type='email'
