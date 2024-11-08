@@ -1,10 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import Footer from '../../components/footer/footer';
 import './Pagina_perfil.css';
 import Header_logon from '../../components/header/Header_logon';
-import foto1 from '../../assets/foto_perfil.png'; // Importando a imagem
-import Btn from '../../components/btn/Btn';
-import { useState } from 'react';
-import ingressos from '../../assets/ingressos.jpg';
+import foto1 from '../../assets/icon-imagem.png';
 
 function Pagina_perfil() {
 	const [formData, setFormData] = useState({
@@ -13,14 +11,27 @@ function Pagina_perfil() {
 		peso: '',
 		dataNascimento: '',
 		cep: '',
-		senha: '',
-		confirmaSenha: '',
 		cpf: '',
 		telefone: '',
 		endereco: '',
 		doencaTransmissivel: '',
 		sexo: '',
 	});
+
+	// Função para buscar os dados da API
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch('http://localhost:3000/cadastro_usuarios');
+				const data = await response.json();
+				setFormData(data); // Carrega os dados no estado do formulário
+			} catch (error) {
+				console.error('Erro ao buscar dados:', error);
+			}
+		};
+
+		fetchData();
+	}, []);
 
 	const handleChange = (e) => {
 		setFormData({
@@ -29,9 +40,26 @@ function Pagina_perfil() {
 		});
 	};
 
-	const handleSubmit = (e) => {
+	// Função para enviar dados atualizados para a API
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(formData);
+		try {
+			const response = await fetch('http://localhost:3000/cadastro_usuarios', {
+				method: 'PUT', // Método PUT para atualizar os dados
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			if (response.ok) {
+				alert('Perfil atualizado com sucesso!');
+			} else {
+				alert('Erro ao atualizar o perfil');
+			}
+		} catch (error) {
+			console.error('Erro ao atualizar perfil:', error);
+		}
 	};
 
 	return (
@@ -40,10 +68,6 @@ function Pagina_perfil() {
 			<div className='perfil_container'>
 				<div className='bloco-container'>
 					<img src={foto1} alt='Imagem ilustrativa' className='perfil-imagem' />
-
-					<div className='btn-perfil'>
-						<Btn label='Atualizar Perfil' referencia='/home' />
-					</div>
 
 					<form className='perfil-form' onSubmit={handleSubmit}>
 						<div className='form-group'>
@@ -55,27 +79,10 @@ function Pagina_perfil() {
 								onChange={handleChange}
 							/>
 							<input
-								type='password'
-								name='senha'
-								placeholder='Senha'
-								value={formData.senha}
-								onChange={handleChange}
-							/>
-						</div>
-
-						<div className='form-group'>
-							<input
 								type='text'
 								name='rg'
 								placeholder='RG'
 								value={formData.rg}
-								onChange={handleChange}
-							/>
-							<input
-								type='password'
-								name='confirmaSenha'
-								placeholder='Confirme a senha'
-								value={formData.confirmaSenha}
 								onChange={handleChange}
 							/>
 						</div>
@@ -180,35 +187,8 @@ function Pagina_perfil() {
 								</label>
 							</div>
 						</div>
+						<button type='submit' className='button-atualizar'>Atualizar</button>
 					</form>
-
-					{/* Premiação */}
-
-					<h2>Brinde de doador frequente</h2>
-					<div className='container_recompensas'>
-						<div className='premio'>
-							<div className='barra-premiacao'>
-								<div className='barra-premiacao-preenchida'></div>
-								<div className='barra-premiacao-vazia'></div>
-								<div className='barra-premiacao-vazia'></div>
-								<div className='barra-premiacao-vazia'></div>
-							</div>
-							<img src={ingressos} alt='Foto de ingressos' />
-							<p>Descrição do brinde, ingressos para 2 pessoas.</p>
-						</div>
-					</div>
-					<div className='container_recompensas'>
-						<div className='premio'>
-							<div className='barra-premiacao'>
-								<div className='barra-premiacao-preenchida'></div>
-								<div className='barra-premiacao-vazia'></div>
-								<div className='barra-premiacao-vazia'></div>
-								<div className='barra-premiacao-vazia'></div>
-							</div>
-							<img src={ingressos} alt='Foto de ingressos' />
-							<p>Descrição do brinde, ingressos para 2 pessoas.</p>
-						</div>
-					</div>
 				</div>
 			</div>
 			<Footer />

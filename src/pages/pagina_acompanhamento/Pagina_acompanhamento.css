@@ -122,20 +122,6 @@ label {
 	
   }
 
-  .detalhes-agendamento button {
-	font-size: 16px;
-	background-color: #ac2727;
-	color: #ffffff;
-	margin-top: 20px;
-	margin-left: 565px;
-	border-radius: 30px;
-	border-color: #ac2727;
-	padding: 6px;
-	
-
-	
-  }
-
   .detalhes-agendamento2 h3 {
 	font-size: 20px;
 	font-weight: 400;
@@ -153,16 +139,26 @@ label {
 	
   }
 
-  .detalhes-agendamento2 button {
+  .btn-mensagem {
 	font-size: 16px;
 	background-color: #ac2727;
 	color: #ffffff;
 	margin-top: 20px;
-	margin-left: 565px;
+	margin-left: 555px;
 	border-radius: 30px;
 	border-color: #ac2727;
-	padding: 6px;
-	
+	padding: 0px;
+	width: 0px;
+  }
 
-	
+  .btn-cancelar {
+	font-size: 16px;
+	background-color: #ac2727;
+	color: #ffffff;
+	margin-top: 20px;
+	margin-left: 535px;
+	border-radius: 30px;
+	border-color: #ac2727;
+	padding: 0px;
+	width: 195px;
   }

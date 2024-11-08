@@ -3,6 +3,7 @@ import './Pagina_acompanhamento.css';
 import Header_logon from '../../components/header/Header_logon';
 import foto1 from '../../assets/agendamento_imagem.png'; 
 import foto2 from '../../assets/upload.png';
+import Btn from '../../components/btn/Btn';
 import { useState } from 'react';
 
 function Pagina_acompanhamento() {
@@ -38,7 +39,9 @@ function Pagina_acompanhamento() {
 								<p>Data: 21/10/2022</p>
 								<p>Horário: 10:00</p>
 								<p>Status: Finalizado</p>
-								<button className="botao-cancelar">Cancelar doação</button>
+								<div className='btn-mensagem'>
+									<Btn label='Mensagem' referencia='/mensagem' />
+								</div>
 							</div>
 							
 							<label htmlFor="file-upload" className="upload-label">
@@ -60,7 +63,9 @@ function Pagina_acompanhamento() {
 								<p>Data: 22/12/2024</p>
 								<p>Horário: 15:00</p>
 								<p>Status: Agendado</p>
-								<button className="botao-cancelar2">Cancelar doação</button>
+								<div className='btn-cancelar'>
+									<Btn label='Cancelar Doação' referencia='/home' />
+								</div>
 							</div>
 							
 							<label htmlFor="file-upload" className="upload-label">
