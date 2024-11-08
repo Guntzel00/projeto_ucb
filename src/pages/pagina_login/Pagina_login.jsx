@@ -1,15 +1,53 @@
+import { useState } from 'react';
 import foto1 from '../../assets/msgdeboasvindas.svg';
 import foto2 from '../../assets/bonecos.svg';
 import foto3 from '../../assets/caixas.svg';
 import Footer from '../../components/footer/footer';
 import './Pagina_login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Btn from '../../components/btn/Btn';
 import Header_inicial from '../../components/header inicial/Header_inicial';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 function Pagina_login() {
+	// Estados para armazenar email, senha e erros
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+
+	// Hook do React Router para redirecionar após login bem-sucedido
+	const navigate = useNavigate();
+
+	// Função para tratar o envio do formulário
+	const handleLogin = (e) => {
+		e.preventDefault(); // Impede o comportamento padrão do formulário
+
+		// Envia a requisição POST para a API de login
+		fetch('http://localhost:5000/api/usuarios/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ email, senha: password }),
+		})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Credenciais inválidas');
+				}
+				return response.json();
+			})
+			.then((data) => {
+				// Armazena o token no localStorage para uso futuro
+				localStorage.setItem('token', data.token);
+				// Redireciona para a página inicial após o login bem-sucedido
+				navigate('/home');
+			})
+			.catch((error) => {
+				setError(error.message); // Define a mensagem de erro para mostrar ao usuário
+			});
+	};
+
 	return (
 		<>
 			<Header_inicial />
@@ -22,22 +60,38 @@ function Pagina_login() {
 					<div className='form-container'>
 						<div className='container-login'>
 							<h2>Login</h2>
-							<label htmlFor='email'>Email:</label>
-							<input type='email' id='email' name='email' required></input>
-							<label htmlFor='password'>Senha:</label>
-							<input
-								type='password'
-								id='password'
-								name='password'
-								required
-							></input>
-							<p>
-								<Link to='/senha'>Esqueceu sua senha?</Link>
-							</p>
-							<p>
-								Não possui cadastro? Clique <Link to='/cadastro'>aqui</Link>
-							</p>
-							<Btn label='Entrar' referencia='/home' />
+							{error && <p className='error-message'>{error}</p>}{' '}
+							{/* Exibe mensagem de erro se houver */}
+							<form onSubmit={handleLogin}>
+								<label htmlFor='email'>Email:</label>
+								<input
+									type='email'
+									id='email'
+									name='email'
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									required
+								/>
+								<label htmlFor='password'>Senha:</label>
+								<input
+									type='password'
+									id='password'
+									name='password'
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									required
+								/>
+								<p>
+									<Link to='/recuperacao'>Esqueceu sua senha?</Link>
+								</p>
+								<p>
+									Não possui cadastro? Clique <Link to='/cadastro'>aqui</Link>
+								</p>
+								<button className='btn' type='submit'>
+									Entrar
+								</button>{' '}
+								{/* Botão para enviar o formulário */}
+							</form>
 						</div>
 						<div className='chamada'>
 							<h2>Veja como você pode fazer a diferença.</h2>

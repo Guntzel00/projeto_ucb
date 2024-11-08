@@ -36,7 +36,6 @@ function Pagina_inicial() {
 			})
 			.then((data) => {
 				setCentrosData(data); // Armazena os dados no estado
-				console.log(data);
 			})
 			.catch((error) => {
 				console.error('Erro ao buscar os dados:', error); // Trata erros

@@ -1,7 +1,7 @@
 import Footer from '../../components/footer/footer';
 import './Pagina_perfil.css';
 import Header_logon from '../../components/header/Header_logon';
-import foto1 from '../../assets/image4.svg'; // Importando a imagem
+import foto1 from '../../assets/foto_perfil.png'; // Importando a imagem
 import Btn from '../../components/btn/Btn';
 import { useState } from 'react';
 import ingressos from '../../assets/ingressos.jpg';
@@ -39,11 +39,7 @@ function Pagina_perfil() {
 			<Header_logon />
 			<div className='perfil_container'>
 				<div className='bloco-container'>
-					<img
-						src={foto1}
-						alt='Imagem ilustrativa'
-						className='perfil-imagem'
-					/>
+					<img src={foto1} alt='Imagem ilustrativa' className='perfil-imagem' />
 
 					<div className='btn-perfil'>
 						<Btn label='Atualizar Perfil' referencia='/home' />
