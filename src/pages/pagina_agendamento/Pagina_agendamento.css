@@ -1,0 +1,73 @@
+.pag_agendamento {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Alinha a `.container` horizontalmente */
+	align-items: center; /* Alinha a `.container` verticalmente */
+	padding: 20px; /* Um pouco de padding para evitar que os elementos toquem as bordas */
+	background-color: #faf1f1; /* Cor de fundo da página (opcional) */
+	button {
+		margin-top: 2rem;
+	}
+}
+
+.date-picker {
+	width: 20rem;
+}
+.react-datepicker-wrapper {
+	height: 3rem;
+}
+
+.escolha-data {
+	display: flex;
+	justify-content: center;
+}
+.btn-horario {
+	background-color: #ac2727;
+	color: #fff;
+	padding: 0.5rem 2rem;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 48px;
+	border: none;
+	cursor: pointer;
+	margin: 0.5rem;
+}
+.escolha-hora {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.horarios {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.declaracao {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		input {
+			margin-right: 1rem;
+		}
+	}
+}
+
+.avisos {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	div {
+		width: 40%;
+		span {
+			color: red;
+		}
+	}
+}
