@@ -12,7 +12,7 @@ function Pagina_acompanhamento() {
     const file = event.target.files[0];
     setSelectedFile(file);
     alert(`Arquivo selecionado: ${file.name}`);
-    // Aqui você pode adicionar lógica para enviar o arquivo a um servidor, por exemplo.
+    
   };
 
 	return (
