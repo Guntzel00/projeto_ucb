@@ -1,7 +1,7 @@
 import Footer from '../../components/footer/footer';
 import './Pagina_mensagem.css';
 import Header_logon from '../../components/header/Header_logon';
-import foto1 from '../../assets/agendamento_imagem.png'; 
+import foto1 from '../../assets/imagem-mensagem.png'; 
 import { useState } from 'react';
 
 function Pagina_mensagem() {
@@ -18,18 +18,21 @@ function Pagina_mensagem() {
 		<>
 			<Header_logon />
 			<div className='mensagem_container'>
-				<div className='bloco-container'>
-					<img src={foto1} alt='Imagem ilustrativa' className='acompanhamento-imagem' />
+				<div className='bloco-container-mensagem'>
+					<img src={foto1} alt='Imagem ilustrativa' className='mensagem-imagem' />
 
 					<div className='titulo-mensagem'>
-          				<h1>Acompanhamento de Agendamento</h1>
+          				<h1>Mensagem</h1>
         			</div>
-        				<p className="description">
-						O agendamento da doação de sangue é um processo importante para garantir que o doador possa contribuir de forma organizada e segura. Para iniciar o processo, o interessado deve selecionar um horário disponível e fornecer as informações necessárias no sistema. É importante lembrar que o agendamento não é definitivo até que o doador conclua o upload do documento necessário no site.
-						</p>
-						<p className="description">
-						Caso ocorra algum imprevisto ou mudança de planos, o agendamento pode ser cancelado a qualquer momento antes da conclusão. Somente após o envio do documento solicitado, o agendamento é considerado finalizado. Dessa forma, o sistema garante que os agendamentos sejam realizados de maneira eficiente, respeitando a disponibilidade e a flexibilidade dos doadores.
-						</p>
+					<div className='texto-mensagem'>
+						<p >Querido(a) doador(a),</p>
+						<p>Gostaríamos de expressar nosso mais sincero agradecimento pela sua decisão de doar sangue. O seu gesto de generosidade e empatia é verdadeiramente inspirador e, mais do que isso, faz uma diferença imensurável na vida de tantas pessoas que lutam pela saúde e pela vida.</p>
+						<p>Cada gota de sangue doado é um ato de amor e solidariedade. Por meio da sua doação, você está oferecendo uma nova chance para pacientes que enfrentam condições médicas graves, emergências, cirurgias e tratamentos que dependem de transfusões. São vidas salvas, famílias que podem manter a esperança e histórias que ganham novos capítulos graças a pessoas como você, que se dispõem a ajudar o próximo sem esperar nada em troca.</p>
+						<p>Saiba que o impacto da sua doação vai muito além do que imaginamos. Você trouxe alívio e conforto para aqueles que estão passando por momentos difíceis, e também para suas famílias, que encontram em pessoas como você um motivo para acreditar na bondade e no cuidado entre os seres humanos.</p>
+						<p>Muito obrigado por sua doação e pelo exemplo maravilhoso que você nos deu. Que seu gesto seja sempre lembrado e que continue inspirando muitos outros a seguirem esse caminho de compaixão.</p>
+						<p>Com toda a nossa gratidão e respeito,</p>
+						<p>Seja Doador.org</p>
+					</div>
 				</div>
 			</div>
 			<Footer />
