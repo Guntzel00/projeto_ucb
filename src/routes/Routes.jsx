@@ -6,6 +6,7 @@ import Pagina_artigo from '../pages/pagina_artigo/Pagina_artigo';
 import Pagina_recuperacao_senha from '../pages/pagina_recuperacao_senha/Pagina_recuperacao_senha';
 import Pagina_cadastro from '../pages/pagina_cadastro/Pagina_cadastro';
 import Pagina_perfil from '../pages/pagina_perfil/Pagina_perfil';
+import Pagina_acompanhamento from '../pages/pagina_acompanhamento/Pagina_acompanhamento';
 
 function AppRoutes() {
 	return (
@@ -17,6 +18,7 @@ function AppRoutes() {
 			<Route path='/recuperacao' element={<Pagina_recuperacao_senha />} />
 			<Route path='/cadastro' element={<Pagina_cadastro />} />
 			<Route path='/perfil' element={<Pagina_perfil />} />
+			<Route path='/acompanhamento' element={<Pagina_acompanhamento />} />
 		</Routes>
 	);
 }
