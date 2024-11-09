@@ -23,6 +23,9 @@ function Header_logon() {
 							<Link to='/conteudos'>Conteúdos</Link>
 						</li>
 						<li>
+							<Link to='/acompanhamento'>Agendamentos</Link>
+						</li>
+						<li>
 							<Link to='/'>
 								<FontAwesomeIcon icon={faPowerOff} />
 							</Link>
