@@ -7,7 +7,8 @@ import Pagina_recuperacao_senha from '../pages/pagina_recuperacao_senha/Pagina_r
 import Pagina_cadastro from '../pages/pagina_cadastro/Pagina_cadastro';
 import Pagina_perfil from '../pages/pagina_perfil/Pagina_perfil';
 import Pagina_acompanhamento from '../pages/pagina_acompanhamento/Pagina_acompanhamento';
-import Pagina_mensagem from '../pages/pagina-mensagem/Pagina_mensagem'
+import Pagina_mensagem from '../pages/pagina-mensagem/Pagina_mensagem';
+import Pagina_agendamento from '../pages/pagina_agendamento/Pagina_agendamento';
 
 function AppRoutes() {
 	return (
@@ -21,6 +22,7 @@ function AppRoutes() {
 			<Route path='/perfil' element={<Pagina_perfil />} />
 			<Route path='/acompanhamento' element={<Pagina_acompanhamento />} />
 			<Route path='/mensagem' element={<Pagina_mensagem />} />
+			<Route path='/agendamento/:id' element={<Pagina_agendamento />} />
 		</Routes>
 	);
 }

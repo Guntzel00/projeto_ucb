@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../../components/footer/footer';
 import Header_logon from '../../components/header/Header_logon';
 import './Pagina_inicial.css';
 import ilustraçao from '../../assets/boas_vindas.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import Btn from '../../components/btn/Btn';
 import PropTypes from 'prop-types';
 
 function Pagina_inicial() {
@@ -51,7 +51,6 @@ function Pagina_inicial() {
 						className='progress-bar-fill'
 						style={{ width: `${percentage}%` }}
 					></div>
-
 					<div className='progress-bar-empty'></div>
 				</div>
 				<span className='percentage'>{percentage} %</span>
@@ -63,25 +62,28 @@ function Pagina_inicial() {
 		percentage: PropTypes.number.isRequired, // A referência deve ser uma string e é obrigatória
 	};
 
-	const CentrosDeDoacao = ({ nome, link_endereco }) => {
+	const CentrosDeDoacao = ({ nome, link_endereco, id }) => {
 		return (
 			<div className='centro'>
 				<div>
 					<h3>{nome}</h3>
-					<a target='_blank' href={link_endereco}>
+					<a target='_blank' href={link_endereco} rel='noopener noreferrer'>
 						<p>
-							Ver localização {''}
+							Ver localização{' '}
 							<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 						</p>
 					</a>
 				</div>
-				<Btn label='Doar' referencia='#' />
+				<Link className='btn' to={`/agendamento/${id}`}>
+					Doar
+				</Link>
 			</div>
 		);
 	};
 	CentrosDeDoacao.propTypes = {
-		nome: PropTypes.string.isRequired, // O label deve ser uma string e é obrigatório
-		link_endereco: PropTypes.string.isRequired, // A referência deve ser uma string e é obrigatória
+		nome: PropTypes.string.isRequired,
+		link_endereco: PropTypes.string.isRequired,
+		id: PropTypes.string.isRequired, // O ID deve ser uma string e é obrigatório
 	};
 
 	return (
@@ -121,6 +123,7 @@ function Pagina_inicial() {
 						{centrosData.map((centro) => (
 							<CentrosDeDoacao
 								key={centro._id}
+								id={centro._id} // Passa o ID para o componente
 								nome={centro.nome}
 								link_endereco={centro.link_localizacao}
 							/>

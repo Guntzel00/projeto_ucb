@@ -71,3 +71,18 @@
 		}
 	}
 }
+
+.btn-horario {
+	background-color: #f0f0f0;
+	color: #333;
+	border: 1px solid #ccc;
+	margin: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.btn-horario.selected {
+	background-color: #007bff; /* Cor para o horário selecionado */
+	color: #fff; /* Cor do texto do horário selecionado */
+	border: 1px solid #007bff;
+}

@@ -23,7 +23,7 @@ function Header_logon() {
 							<Link to='/conteudos'>Conteúdos</Link>
 						</li>
 						<li>
-							<Link to='/logout'>
+							<Link to='/'>
 								<FontAwesomeIcon icon={faPowerOff} />
 							</Link>
 						</li>

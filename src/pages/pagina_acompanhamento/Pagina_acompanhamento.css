@@ -1,5 +1,5 @@
 .bloco-container {
-	position: relative; 
+	position: relative;
 	background-color: white;
 	padding: 0px;
 	border-radius: 10px;
@@ -8,13 +8,13 @@
 }
 
 .titulo-acompanhamento {
-    h1{
-	font-weight: 500;
-	color: #ac2727;
-	text-align: center;
-	margin-top: 70px;
-	font-size: 22px;
-    }
+	h1 {
+		font-weight: 500;
+		color: #ac2727;
+		text-align: center;
+		margin-top: 70px;
+		font-size: 22px;
+	}
 }
 
 .acompanhamento-imagem {
@@ -65,10 +65,9 @@
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	width: 900px;
 	height: 300px;
-	margin-top: 120px; 
+	margin-top: 120px;
 	margin-bottom: 2rem;
 	margin-left: 50px;
-	
 }
 
 .acompanhamento-card2 {
@@ -78,10 +77,9 @@
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	width: 900px;
 	height: 300px;
-	margin-top: 40px; 
+	margin-top: 40px;
 	margin-bottom: 6rem;
 	margin-left: 50px;
-	
 }
 
 label {
@@ -91,55 +89,53 @@ label {
 
 .btn-acompanhamento {
 	position: absolute;
-	top: 280px; 
+	top: 280px;
 	left: 125px;
 	display: flex;
 	justify-content: center;
 }
-  
-  .upload-label {
+
+.upload-label {
 	cursor: pointer;
-  }
-  
-  .file-input {
+}
+
+.file-input {
 	display: none;
-  }
-  
-  .detalhes-agendamento h3 {
+}
+
+.detalhes-agendamento h3 {
 	font-size: 20px;
 	font-weight: 400;
 	color: #000000;
 	margin-left: 525px;
 	margin-top: 20px;
 	margin-bottom: 30px;
-  }
-  
-  .detalhes-agendamento p {
+}
+
+.detalhes-agendamento p {
 	font-size: 16px;
 	color: #a12b2b;
 	margin: 4px 0;
 	margin-left: 565px;
-	
-  }
+}
 
-  .detalhes-agendamento2 h3 {
+.detalhes-agendamento2 h3 {
 	font-size: 20px;
 	font-weight: 400;
 	color: #000000;
 	margin-left: 525px;
 	margin-top: 20px;
 	margin-bottom: 30px;
-  }
-  
-  .detalhes-agendamento2 p {
+}
+
+.detalhes-agendamento2 p {
 	font-size: 16px;
 	color: #a12b2b;
 	margin: 4px 0;
 	margin-left: 565px;
-	
-  }
+}
 
-  .btn-mensagem {
+.btn-mensagem {
 	font-size: 16px;
 	background-color: #ac2727;
 	color: #ffffff;
@@ -149,9 +145,9 @@ label {
 	border-color: #ac2727;
 	padding: 0px;
 	width: 0px;
-  }
+}
 
-  .btn-cancelar {
+.btn-cancelar {
 	font-size: 16px;
 	background-color: #ac2727;
 	color: #ffffff;
@@ -161,4 +157,4 @@ label {
 	border-color: #ac2727;
 	padding: 0px;
 	width: 195px;
-  }
+}
