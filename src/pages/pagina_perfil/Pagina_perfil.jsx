@@ -5,195 +5,213 @@ import Header_logon from '../../components/header/Header_logon';
 import foto1 from '../../assets/icon-imagem.png';
 
 function Pagina_perfil() {
-	const [formData, setFormData] = useState({
-		email: '',
-		rg: '',
-		peso: '',
-		dataNascimento: '',
-		cep: '',
-		cpf: '',
-		telefone: '',
-		endereco: '',
-		doencaTransmissivel: '',
-		sexo: '',
-	});
+    const [formData, setFormData] = useState({
+        email: '',
+        rg: '',
+        peso: '',
+        dataNascimento: '',
+        cep: '',
+        cpf: '',
+        telefone: '',
+        endereco: ''
+    });
+    const [initialData, setInitialData] = useState({}); // Estado para armazenar dados iniciais
 
-	// Função para buscar os dados da API
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await fetch('http://localhost:3000/cadastro_usuarios');
-				const data = await response.json();
-				setFormData(data); // Carrega os dados no estado do formulário
-			} catch (error) {
-				console.error('Erro ao buscar dados:', error);
-			}
-		};
+    // Função para buscar os dados do usuário autenticado
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/usuarios/me', {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`, // Token JWT armazenado no localStorage
+                    },
+                });
+                const data = await response.json();
 
-		fetchData();
-	}, []);
+                // Mapeamento explícito dos dados recebidos para garantir que estejam corretos
+                setFormData({
+                    email: data.email || '',
+                    rg: data.rg || '',
+                    peso: data.peso || '',
+                    dataNascimento: data.dataNascimento || '',
+                    cep: data.cep || '',
+                    cpf: data.cpf || '',
+                    telefone: data.telefone || '',
+                    endereco: data.endereco || ''
+                });
 
-	const handleChange = (e) => {
-		setFormData({
-			...formData,
-			[e.target.name]: e.target.value,
-		});
-	};
+                // Armazena os dados iniciais para comparação posterior
+                setInitialData({
+                    email: data.email || '',
+                    rg: data.rg || '',
+                    peso: data.peso || '',
+                    dataNascimento: data.dataNascimento || '',
+                    cep: data.cep || '',
+                    cpf: data.cpf || '',
+                    telefone: data.telefone || '',
+                    endereco: data.endereco || ''
+                });
 
-	// Função para enviar dados atualizados para a API
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		try {
-			const response = await fetch('http://localhost:3000/cadastro_usuarios', {
-				method: 'PUT', // Método PUT para atualizar os dados
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			});
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        };
+        fetchData();
+    }, []);
 
-			if (response.ok) {
-				alert('Perfil atualizado com sucesso!');
-			} else {
-				alert('Erro ao atualizar o perfil');
-			}
-		} catch (error) {
-			console.error('Erro ao atualizar perfil:', error);
-		}
-	};
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-	return (
-		<>
-			<Header_logon />
-			<div className='perfil_container'>
-				<div className='bloco-container'>
-					<img src={foto1} alt='Imagem ilustrativa' className='perfil-imagem' />
+    // Função para enviar dados atualizados para a API
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-					<form className='perfil-form' onSubmit={handleSubmit}>
-						<div className='form-group'>
-							<input
-								type='email'
-								name='email'
-								placeholder='Email'
-								value={formData.email}
-								onChange={handleChange}
-							/>
-							<input
-								type='text'
-								name='rg'
-								placeholder='RG'
-								value={formData.rg}
-								onChange={handleChange}
-							/>
-						</div>
+        // Filtrar dados alterados em relação ao estado inicial
+        const dadosAtualizados = {};
+        Object.keys(formData).forEach((key) => {
+            if (formData[key] !== initialData[key]) {
+                dadosAtualizados[key] = formData[key];
+            }
+        });
 
-						<div className='form-group'>
-							<input
-								type='text'
-								name='peso'
-								placeholder='Peso'
-								value={formData.peso}
-								onChange={handleChange}
-							/>
-							<input
-								type='text'
-								name='cpf'
-								placeholder='CPF'
-								value={formData.cpf}
-								onChange={handleChange}
-							/>
-						</div>
+        // Verifica se há dados a serem atualizados
+        if (Object.keys(dadosAtualizados).length === 0) {
+            alert('Nenhuma alteração foi feita.');
+            return;
+        }
 
-						<div className='form-group'>
-							<input
-								type='date'
-								name='dataNascimento'
-								placeholder='Data de nascimento'
-								value={formData.dataNascimento}
-								onChange={handleChange}
-							/>
-							<input
-								type='text'
-								name='endereco'
-								placeholder='Endereço'
-								value={formData.endereco}
-								onChange={handleChange}
-							/>
-						</div>
+        try {
+            const response = await fetch(`http://localhost:5000/api/usuarios/${formData.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+                body: JSON.stringify(dadosAtualizados),
+            });
 
-						<div className='form-group'>
-							<input
-								type='text'
-								name='cep'
-								placeholder='CEP'
-								value={formData.cep}
-								onChange={handleChange}
-							/>
-							<input
-								type='text'
-								name='telefone'
-								placeholder='Telefone'
-								value={formData.telefone}
-								onChange={handleChange}
-							/>
-						</div>
+            if (response.ok) {
+                alert('Perfil atualizado com sucesso!');
+                setInitialData(formData); // Atualiza o estado inicial com os dados atualizados
+            } else {
+                alert('Erro ao atualizar o perfil');
+            }
+        } catch (error) {
+            console.error('Erro ao atualizar perfil:', error);
+        }
+    };
 
-						<div className='form-group radio-columns'>
-							<div className='radio-group'>
-								<label>É portador de doença transmissível?</label>
-								<label>
-									<input
-										type='radio'
-										name='doencaTransmissivel'
-										value='Sim'
-										checked={formData.doencaTransmissivel === 'Sim'}
-										onChange={handleChange}
-									/>
-									Sim
-								</label>
-								<label>
-									<input
-										type='radio'
-										name='doencaTransmissivel'
-										value='Não'
-										checked={formData.doencaTransmissivel === 'Não'}
-										onChange={handleChange}
-									/>
-									Não
-								</label>
-							</div>
+    return (
+        <>
+            <Header_logon />
+            <div className='perfil_container'>
+                <div className='bloco-container'>
+                    <img src={foto1} alt='Imagem ilustrativa' className='perfil-imagem' />
 
-							<div className='sex-group'>
-								<label>Sexo:</label>
-								<label>
-									<input
-										type='radio'
-										name='sexo'
-										value='Masculino'
-										checked={formData.sexo === 'Masculino'}
-										onChange={handleChange}
-									/>
-									Masculino
-								</label>
-								<label>
-									<input
-										type='radio'
-										name='sexo'
-										value='Feminino'
-										checked={formData.sexo === 'Feminino'}
-										onChange={handleChange}
-									/>
-									Feminino
-								</label>
-							</div>
-						</div>
-						<button type='submit' className='button-atualizar'>Atualizar</button>
-					</form>
-				</div>
-			</div>
-			<Footer />
-		</>
-	);
+                    <form className='perfil-form' onSubmit={handleSubmit}>
+                        <div className='form-group'>
+                            <label>
+                                Email:
+                                <input
+                                    type='email'
+                                    name='email'
+                                    placeholder='Email'
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <label>
+                                RG:
+                                <input
+                                    type='text'
+                                    name='rg'
+                                    placeholder='RG'
+                                    value={formData.rg}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+
+                        <div className='form-group'>
+                            <label>
+                                Peso:
+                                <input
+                                    type='text'
+                                    name='peso'
+                                    placeholder='Peso'
+                                    value={formData.peso}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <label>
+                                CPF:
+                                <input
+                                    type='text'
+                                    name='cpf'
+                                    placeholder='CPF'
+                                    value={formData.cpf}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+
+                        <div className='form-group'>
+                            <label>
+                                Data de Nascimento:
+                                <input
+                                    type='date'
+                                    name='dataNascimento'
+                                    placeholder='Data de nascimento'
+                                    value={formData.dataNascimento}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <label>
+                                Endereço:
+                                <input
+                                    type='text'
+                                    name='endereco'
+                                    placeholder='Endereço'
+                                    value={formData.endereco}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+
+                        <div className='form-group'>
+                            <label>
+                                CEP:
+                                <input
+                                    type='text'
+                                    name='cep'
+                                    placeholder='CEP'
+                                    value={formData.cep}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                            <label>
+                                <p>Telefone:</p>
+                                <input
+                                    type='text'
+                                    name='telefone'
+                                    placeholder='Telefone'
+                                    value={formData.telefone}
+                                    onChange={handleChange}
+                                />
+                            </label>
+                        </div>
+
+                        <button type='submit' className='button-atualizar'>Atualizar</button>
+                    </form>
+                </div>
+            </div>
+            <Footer />
+        </>
+    );
 }
 
 export default Pagina_perfil;
