@@ -10,7 +10,7 @@
 .perfil-imagem {
 	position: absolute;
 	top: 70px;
-	left: 115px;
+	left: 400px;
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
@@ -91,18 +91,10 @@ label {
 	font-weight: 300;
 }
 
-.btn-perfil {
-	position: absolute;
-	top: 280px; 
-	left: 125px;
-	display: flex;
-	justify-content: center;
-}
-
 .button-atualizar {
 	position: absolute;
-	top: 280px; 
-	left: 125px;
+	top: 290px; 
+	left: 410px;
 	display: flex;
 	justify-content: center;
 	background-color: #ac2727;
